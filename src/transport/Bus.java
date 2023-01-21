@@ -4,11 +4,19 @@ import transport.driver.DriverD;
 
 public class Bus extends Transport <DriverD> {
 
-
-    public Bus(String brand, String model, Double engineVolume, DriverD driverD) {
+    PassengerCapacity passengerCapacity; // поле перечисляемого типа
+    public Bus(String brand, String model, Double engineVolume, DriverD driverD, PassengerCapacity passengerCapacity) {
         super(brand, model, engineVolume, driverD);
+        this.passengerCapacity = passengerCapacity;
     }
 
+    public PassengerCapacity getPassengerCapacity() {
+        return passengerCapacity;
+    }
+
+    public void setPassengerCapacity(PassengerCapacity passengerCapacity) {
+        this.passengerCapacity = passengerCapacity;
+    }
 
     @Override
     public void startMove(){
@@ -45,7 +53,16 @@ public class Bus extends Transport <DriverD> {
 
     @Override
     public String toString() {
-        return "Автобус " + brand + " " +model + " " + engineVolume;
+        return "Автобус: " + brand + ", модель: " + model + ", объем двигателя: " + engineVolume + ", " + passengerCapacity;
+    }
+
+    @Override
+    public void printType() {
+        if (passengerCapacity == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println("Кузов: " + passengerCapacity);
+        }
     }
 }
 

@@ -4,13 +4,20 @@ import transport.driver.DriverC;
 
 public class Truck extends Transport <DriverC> {
 
-    public Truck(String brand, String model, Double engineVolume, DriverC driverC) {
+    FullMass fullMass; // поле перечисляемого типа
+    public Truck(String brand, String model, Double engineVolume, DriverC driverC, FullMass fullMass) {
 
         super(brand, model, engineVolume, driverC);
+        this.fullMass = fullMass;
     }
 
+    public FullMass getFullMass() {
+        return fullMass;
+    }
 
-
+    public void setFullMass(FullMass fullMass) {
+        this.fullMass = fullMass;
+    }
 
     @Override
     public void startMove() {
@@ -46,6 +53,15 @@ public class Truck extends Transport <DriverC> {
 
     @Override
     public String toString() {
-        return "Грузовик " + brand + " " +model + " " + engineVolume;
+        return "Грузовик: " + brand + ", модель: " + model + ", объем двигателя: " + engineVolume + ", " + fullMass;
+    }
+
+    @Override
+    public void printType() {
+        if (fullMass == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println("Кузов: " + fullMass);
+        }
     }
 }

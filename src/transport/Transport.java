@@ -3,7 +3,7 @@ package transport; // информирует что класс Transport нах�
 
 import transport.driver.Driver; // импортируется класс Driver из пакета driver, входящего в пакет transport. Зачем?
 
-public abstract class Transport<T extends Driver> implements Competing {  //
+public abstract class Transport<T extends Driver> implements Competing {
     public final String brand;
     public final String model;
     public Double engineVolume;
@@ -70,5 +70,8 @@ public abstract class Transport<T extends Driver> implements Competing {  //
         System.out.println("Транспортное средство закончило движение");
     }
 
+
+
+    public abstract void printType();
 }
 
