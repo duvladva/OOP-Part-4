@@ -5,7 +5,7 @@ import transport.driver.DriverC;
 public class Truck extends Transport <DriverC> {
 
     FullMass fullMass; // поле перечисляемого типа
-    public Truck(String brand, String model, Double engineVolume, DriverC driverC, FullMass fullMass) {
+    Truck(String brand, String model, Double engineVolume, DriverC driverC, FullMass fullMass) {
 
         super(brand, model, engineVolume, driverC);
         this.fullMass = fullMass;

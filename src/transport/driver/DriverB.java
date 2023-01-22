@@ -14,7 +14,7 @@ public class DriverB extends Driver { // класс DriverB - это класс 
 
     @Override
     public void finishMove() { // переопределяем метод базового класса
-        System.out.println("Водитель категории В " + getName() + " завержил движение");
+        System.out.println("Водитель категории В " + getName() + " завершил движение");
 
     }
 

@@ -5,7 +5,7 @@ import transport.driver.DriverD;
 public class Bus extends Transport <DriverD> {
 
     PassengerCapacity passengerCapacity; // поле перечисляемого типа
-    public Bus(String brand, String model, Double engineVolume, DriverD driverD, PassengerCapacity passengerCapacity) {
+    Bus(String brand, String model, Double engineVolume, DriverD driverD, PassengerCapacity passengerCapacity) {
         super(brand, model, engineVolume, driverD);
         this.passengerCapacity = passengerCapacity;
     }

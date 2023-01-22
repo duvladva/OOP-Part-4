@@ -1,6 +1,6 @@
 package transport.driver; // зачем эта строка? При её отсутсвии выводится сообщение "Missing package statement: 'transport.driver'" (Отсутствует оператор пакета: «transport.driver»)
 
-public abstract class Driver { // базовый класс "Водитель", он абстрактный так как в нем имеется хотябы один абстрактный метод. Таких тут три: startMove(), finishMove() и refuel().
+public abstract class Driver { // базовый класс "Водитель", он абстрактный так как в нем имеется хотя бы один абстрактный метод. Таких тут три: startMove(), finishMove() и refuel().
     private String name;
     private Boolean hasDriverLicense;
     private int driverExperience;

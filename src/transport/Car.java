@@ -6,7 +6,7 @@ public class Car extends Transport<DriverB> {
 
     CaseType caseType; // поле перечисляемого типа
 
-    public Car(String brand, String model, Double engineVolume, DriverB driverB, CaseType caseType) {
+    Car(String brand, String model, Double engineVolume, DriverB driverB, CaseType caseType) {
 
         super(brand, model, engineVolume, driverB);
         this.caseType = caseType;
