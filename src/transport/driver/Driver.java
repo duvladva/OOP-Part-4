@@ -1,13 +1,13 @@
-package transport.driver; // зачем эта строка? При её отсутсвии выводится сообщение "Missing package statement: 'transport.driver'" (Отсутствует оператор пакета: «transport.driver»)
+package transport.driver; // зачем эта строка? При её отсутствии выводится сообщение "Missing package statement: 'transport.driver'" (Отсутствует оператор пакета: «transport.driver»)
 
-public abstract class Driver { // базовый класс "Водитель", он абстрактный так как в нем имеется хотя бы один абстрактный метод. Таких тут три: startMove(), finishMove() и refuel().
+public abstract class Driver { // Базовый класс "Водитель", он абстрактный так как в нем имеется хотя бы один абстрактный метод. Таких тут три: startMove(), finishMove() и refuel().
     private String name;
-    private Boolean hasDriverLicense;
+    private Boolean isDriverLicense;
     private int driverExperience;
 
-    public Driver(String name, Boolean hasDriverLicense, int driverExperience) { // конструктор класса Driver - базовый класс для классов DriverB, DriverD, DriverC
+    public Driver(String name, Boolean isDriverLicense, int driverExperience) { // конструктор класса Driver - базовый класс для классов DriverB, DriverD, DriverC
         this.name = name;
-        this.hasDriverLicense = hasDriverLicense;
+        this.isDriverLicense = isDriverLicense;
         this.driverExperience = driverExperience;
     }
 
@@ -19,12 +19,12 @@ public abstract class Driver { // базовый класс "Водитель", 
         this.name = name;
     }
 
-    public Boolean getHasDriverLicense() {
-        return hasDriverLicense;
+    public Boolean isDriverLicense() {
+        return isDriverLicense;
     }
 
     public void setHasDriverLicense(Boolean hasDriverLicense) {
-        this.hasDriverLicense = hasDriverLicense;
+        this.isDriverLicense = hasDriverLicense;
     }
 
     public int getDriverExperience() {

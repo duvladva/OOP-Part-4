@@ -1,5 +1,6 @@
 package transport;
 
+import transport.Exeption.DiagnosticFailedExeption;
 import transport.driver.DriverB;
 import transport.driver.DriverC;
 import transport.driver.DriverD;
@@ -7,7 +8,7 @@ import transport.driver.DriverD;
 public class Main {
     public static void main(String[] args) {
 
-        DriverB driverB = new DriverB("Андрей Андреевич Андреев", true, 5);
+        DriverB driverB = new DriverB("Андрей Андреевич Андреев", false, 5);
         DriverC driverC = new DriverC("Борис Борисович Борисов", true, 6);
         DriverD driverD = new DriverD("Владимир Владимирович Владимиров", true, 5);
 
@@ -62,10 +63,25 @@ public class Main {
         printInfo(MAZ);
         printInfo(Volvo);
         printInfo(DAF);
+
+
+        try {
+            System.out.println(Lada.diagnostics());
+        } catch (DiagnosticFailedExeption e) {
+            e.printStackTrace();
+        }
+
+        try {
+            System.out.println(KamAZ.diagnostics());
+        } catch (DiagnosticFailedExeption e) {
+            e.printStackTrace();
+        }
     }
 
     private static void printInfo(Transport<?> transport) {
         System.out.println("Водитель " + transport.getDriver().getName() + " управляет автотранспортом " + transport.getBrand() + "  модель " + transport.getModel() + " и будет учавствовать в заезде");
 
     }
+
+
 }

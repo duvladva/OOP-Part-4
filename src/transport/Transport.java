@@ -1,7 +1,8 @@
 package transport; // информирует что класс Transport находится в пакете transport
 
 
-import transport.driver.Driver; // импортируется класс Driver из пакета driver, входящего в пакет transport. Зачем?
+import transport.Exeption.DiagnosticFailedExeption;
+import transport.driver.Driver; // Импортируется класс Driver из пакета driver, входящего в пакет transport. Зачем?
 
 public abstract class Transport<T extends Driver> implements Competing {
     public final String brand;
@@ -33,6 +34,8 @@ public abstract class Transport<T extends Driver> implements Competing {
         this.driver = driver;
 
     }
+
+    public abstract boolean diagnostics() throws DiagnosticFailedExeption; // метод для выбрасывания исключения DiagnosticFailedExeption
 
     public String getBrand() {
         return brand;

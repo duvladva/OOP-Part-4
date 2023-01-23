@@ -1,5 +1,6 @@
 package transport;
 
+import transport.Exeption.DiagnosticFailedExeption;
 import transport.driver.DriverB;
 
 public class Car extends Transport<DriverB> {
@@ -19,6 +20,16 @@ public class Car extends Transport<DriverB> {
 
     public void setCaseType(CaseType caseType) {
         this.caseType = caseType;
+    }
+
+    @Override
+    public boolean diagnostics() throws DiagnosticFailedExeption { // переопределение метода diagnostics()
+        if (getDriver() != null && getDriver().isDriverLicense()) {
+            return true;
+        } else {
+            throw new DiagnosticFailedExeption();
+        }
+
     }
 
     @Override

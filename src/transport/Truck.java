@@ -1,5 +1,6 @@
 package transport;
 
+import transport.Exeption.DiagnosticFailedExeption;
 import transport.driver.DriverC;
 
 public class Truck extends Transport <DriverC> {
@@ -17,6 +18,16 @@ public class Truck extends Transport <DriverC> {
 
     public void setFullMass(FullMass fullMass) {
         this.fullMass = fullMass;
+    }
+
+    @Override
+    public boolean diagnostics() throws DiagnosticFailedExeption { // переопределение метода diagnostics()
+        if (getDriver() != null && getDriver().isDriverLicense()) {
+            return true;
+        } else {
+            throw new DiagnosticFailedExeption();
+        }
+
     }
 
     @Override
