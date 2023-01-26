@@ -3,12 +3,19 @@ package transport; // информирует что класс Transport нах�
 
 import transport.Exeption.DiagnosticFailedExeption;
 import transport.driver.Driver; // Импортируется класс Driver из пакета driver, входящего в пакет transport. Зачем?
+import transport.mechanic.Mechanic;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Transport<T extends Driver> implements Competing {
-    public final String brand;
-    public final String model;
-    public Double engineVolume;
+    private final String brand;
+    private final String model;
+    private Double engineVolume;
     private final T driver;
+
+
+    private final List<Mechanic> mechanics = new ArrayList<Mechanic>(); // определение списка механиков
 
     private static final String DEFAULT_VALUE = "default";
     private static final Double DEFAULT_ENGINE_VALUE = 2.0;
@@ -64,6 +71,14 @@ public abstract class Transport<T extends Driver> implements Competing {
         return driver;
     }
 
+    public List<Mechanic> getMechanics() {
+        return mechanics;
+    }
+
+    public void addMechanic(Mechanic mechanic) {
+        mechanics.add(mechanic);
+    }
+
     public void startMove() {
         System.out.println("Транспортное средство начало движение");
     }
@@ -72,7 +87,6 @@ public abstract class Transport<T extends Driver> implements Competing {
     public void finishMove() {
         System.out.println("Транспортное средство закончило движение");
     }
-
 
 
     public abstract void printType();

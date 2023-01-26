@@ -1,11 +1,13 @@
 package transport;
 
 import transport.Exeption.DiagnosticFailedExeption;
+import transport.PassengerCapacity;
+import transport.Transport;
 import transport.driver.DriverD;
 
-public class Bus extends Transport <DriverD> {
+public class Bus extends Transport<DriverD> {
 
-    PassengerCapacity passengerCapacity; // поле перечисляемого типа
+    private PassengerCapacity passengerCapacity; // поле перечисляемого типа
     Bus(String brand, String model, Double engineVolume, DriverD driverD, PassengerCapacity passengerCapacity) {
         super(brand, model, engineVolume, driverD);
         this.passengerCapacity = passengerCapacity;
@@ -59,7 +61,7 @@ public class Bus extends Transport <DriverD> {
 
     @Override
     public String toString() {
-        return "Автобус: " + brand + ", модель: " + model + ", объем двигателя: " + engineVolume + ", " + passengerCapacity;
+        return "Автобус: " + getBrand() + ", модель: " + getModel() + ", объем двигателя: " + getEngineVolume() + ", " + passengerCapacity;
     }
 
     @Override

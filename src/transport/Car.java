@@ -3,9 +3,9 @@ package transport;
 import transport.Exeption.DiagnosticFailedExeption;
 import transport.driver.DriverB;
 
-public class Car extends Transport<DriverB> {
+class Car extends Transport<DriverB> {
 
-    CaseType caseType; // поле перечисляемого типа
+    private CaseType caseType; // поле перечисляемого типа
 
     Car(String brand, String model, Double engineVolume, DriverB driverB, CaseType caseType) {
 
@@ -66,7 +66,7 @@ public class Car extends Transport<DriverB> {
 
     @Override
     public String toString() {
-        return "Автомобиль: " + brand + ", модель: " + model + ", объем двигателя: " + engineVolume + ", " + caseType;
+        return "Автомобиль: " + getBrand() + ", модель: " + getModel() + ", объем двигателя: " + getEngineVolume() + ", " + caseType;
     }
 
     @Override

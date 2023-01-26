@@ -39,6 +39,8 @@ public abstract class Driver { // Базовый класс "Водитель", 
     public abstract void finishMove();
     public abstract void refuel();
 
-
-
+    @Override
+    public String toString() {
+        return "Водитель " + name;
+    }
 }

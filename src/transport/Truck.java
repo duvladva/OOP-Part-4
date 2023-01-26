@@ -5,7 +5,7 @@ import transport.driver.DriverC;
 
 public class Truck extends Transport <DriverC> {
 
-    FullMass fullMass; // поле перечисляемого типа
+    private FullMass fullMass; // поле перечисляемого типа
     Truck(String brand, String model, Double engineVolume, DriverC driverC, FullMass fullMass) {
 
         super(brand, model, engineVolume, driverC);
@@ -64,7 +64,7 @@ public class Truck extends Transport <DriverC> {
 
     @Override
     public String toString() {
-        return "Грузовик: " + brand + ", модель: " + model + ", объем двигателя: " + engineVolume + ", " + fullMass;
+        return "Грузовик: " + getBrand() + ", модель: " + getModel() + ", объем двигателя: " + getEngineVolume() + ", " + fullMass;
     }
 
     @Override

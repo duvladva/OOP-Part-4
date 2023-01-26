@@ -5,7 +5,7 @@ public enum CaseType {
     SEDAN("Седан"), HATCHBACK("Хэтчбек"), COUPE("Купе"), UNIVERSAL("Универсал"), OFFROAD("Внедорожник"),
     CROSSOVER("Кроссовер"), PICKUP("Пикап"), VAN("Фургон"), MINIVAN("Минивэн");
 
-    final String caseType; // переменная экземпляра перечисляемого типа
+    private final String caseType; // переменная экземпляра перечисляемого типа
     CaseType(String ct) {
         caseType = ct;
     }
