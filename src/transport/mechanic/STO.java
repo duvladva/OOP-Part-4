@@ -23,7 +23,7 @@ public class STO {
         if (transport != null) {
             try {
                 transport.diagnostics();
-                transport.getMechanics().get(0).maintenance();
+                transport.getMechanics().iterator().next().maintenance();
             } catch (DiagnosticFailedExeption e){
                 System.out.println("Ошибка при проведении ТО " + transport);
             }

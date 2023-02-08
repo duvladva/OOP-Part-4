@@ -6,7 +6,9 @@ import transport.driver.Driver; // Импортируется класс Driver 
 import transport.mechanic.Mechanic;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public abstract class Transport<T extends Driver> implements Competing {
     private final String brand;
@@ -15,7 +17,7 @@ public abstract class Transport<T extends Driver> implements Competing {
     private final T driver;
 
 
-    private final List<Mechanic> mechanics = new ArrayList<Mechanic>(); // определение списка механиков
+    private final Set<Mechanic> mechanics = new HashSet<>(); // определение списка механиков
 
     private static final String DEFAULT_VALUE = "default";
     private static final Double DEFAULT_ENGINE_VALUE = 2.0;
@@ -71,7 +73,7 @@ public abstract class Transport<T extends Driver> implements Competing {
         return driver;
     }
 
-    public List<Mechanic> getMechanics() {
+    public Set<Mechanic> getMechanics() {
         return mechanics;
     }
 

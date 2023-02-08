@@ -9,8 +9,7 @@ import transport.mechanic.Mechanic;
 import transport.mechanic.STO;
 import transport.mechanic.TransportType;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -97,8 +96,8 @@ public class Main {
         Mechanic mechanic3 = new Mechanic("Магомедов Магомед", "Серпантин", TransportType.ALL);
 
         carLada.addMechanic(mechanic1);
-        carLada.addMechanic(mechanic2);
-        carLada.addMechanic(mechanic3);
+        carLada.addMechanic(mechanic1);
+        carLada.addMechanic(mechanic1);
 
         busDaewoo.addMechanic(mechanic3);
 
@@ -121,9 +120,17 @@ public class Main {
         sto.addTransport(busDaewoo);
         sto.addTransport(truckKamAZ);
 
-        sto.runTO();
-        sto.runTO();
-        sto.runTO();
+//        sto.runTO();
+//        sto.runTO();
+//        sto.runTO();
+
+        Map<Transport<?>,Mechanic> transportMechanicMap = new HashMap<>();
+        for (Transport<?> racer: racers) {
+            Set<Mechanic> mechanics = racer.getMechanics();
+            while (mechanics.iterator().hasNext()) {
+                transportMechanicMap.put(racer, mechanics.iterator().next());
+            }
+        }
     }
 
     private static void printInfo(Transport<?> transport) {
