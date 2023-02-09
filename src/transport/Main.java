@@ -92,11 +92,12 @@ public class Main {
 
 
         Mechanic mechanic1 = new Mechanic("Максимов Максим", "Винтик", TransportType.ALL);
+        Mechanic mechanic11 = new Mechanic("Максимов Максим", "Винтик", TransportType.ALL); // дубликат объекта mechanic1
         Mechanic mechanic2 = new Mechanic("Михайлов Михаил", "Шпунтик", TransportType.ALL);
         Mechanic mechanic3 = new Mechanic("Магомедов Магомед", "Серпантин", TransportType.ALL);
 
         carLada.addMechanic(mechanic1);
-        carLada.addMechanic(mechanic1);
+        carLada.addMechanic(mechanic11); // добавление механика-дубликата
         carLada.addMechanic(mechanic1);
 
         busDaewoo.addMechanic(mechanic3);
