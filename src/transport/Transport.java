@@ -5,10 +5,7 @@ import transport.Exeption.DiagnosticFailedExeption;
 import transport.driver.Driver; // Импортируется класс Driver из пакета driver, входящего в пакет transport. Зачем?
 import transport.mechanic.Mechanic;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public abstract class Transport<T extends Driver> implements Competing {
     private final String brand;
@@ -92,5 +89,18 @@ public abstract class Transport<T extends Driver> implements Competing {
 
 
     public abstract void printType();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transport<?> transport = (Transport<?>) o;
+        return brand.equals(transport.brand) && model.equals(transport.model) && engineVolume.equals(transport.engineVolume) && driver.equals(transport.driver) && mechanics.equals(transport.mechanics);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model, engineVolume, driver, mechanics);
+    }
 }
 
